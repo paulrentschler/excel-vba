@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "parHaystackSearch"
 Option Explicit
 
 'How many blank values in a row causes the search to stop (must be greater than zero)
@@ -11,7 +11,7 @@ Public Function ConvertCharColumnToNumber(ByVal column_letter As String) As Long
     '
     '@param   column_letter  the letter designation for a column
     '@return  Long  the numeric representation for the column
-    
+
     ConvertCharColumnToNumber = ActiveSheet.Range(column_letter & "1").column
 End Function
 
@@ -21,7 +21,7 @@ Public Function DetermineColumnNumber(ByVal column As Variant) As Long
     '
     '@param   column  a letter or number representation of a column
     '@return  Long  the numeric representation for `Column`
-    
+
     If IsNumeric(column) Then
         DetermineColumnNumber = column
     Else
@@ -45,10 +45,10 @@ Public Function FindMatchingRow(ByRef haystack As Worksheet, ByVal haystack_colu
     '                          stop the search.
     '@return  Long  the number of the row in `haystack` that contains the
     '               matching value to `needle`. Returns `0` if not found.
-    
+
     Dim current_row As Long
     Dim blank_count As Integer
-    
+
     haystack_column = DetermineColumnNumber(haystack_column)
     With haystack
         blank_count = 0
@@ -58,7 +58,7 @@ Public Function FindMatchingRow(ByRef haystack As Worksheet, ByVal haystack_colu
                 If blanks_allowed Then
                     blank_count = 0
                 End If
-                
+
                 If Trim(.Cells(current_row, haystack_column)) = needle Then
                     FindMatchingRow = current_row
                     Exit Do
@@ -70,11 +70,11 @@ Public Function FindMatchingRow(ByRef haystack As Worksheet, ByVal haystack_colu
                     blank_count = CONCURRENT_BLANK_VALUES + 1
                 End If
             End If
-                
+
             current_row = current_row + 1
             DoEvents
         Loop
     End With
-    
+
     FindMatchingRow = 0
 End Function
