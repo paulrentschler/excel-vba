@@ -38,6 +38,25 @@ Returns the row in worksheet `haystack` with a value in `haystack_column` that m
                    matching value to `needle`. Returns `0` if not found.
 
 
+#### FindMatchingRows
+
+Returns a collection of rows in worksheet `haystack` with a value in `haystack_column` that matches `needle`.
+
+    @param   haystack         the worksheet object that should be searched
+    @param   haystack_column  the column (number or letter) that should be
+                              searched
+    @param   needle           the value to find in `haystack_column`
+    @param   start_row        the row that the search should start with.
+                              Defaults to 2 (assumes a headings row).
+    @param   blanks_allowed   a boolean indicating whether blank values in
+                              `haystack_column` should stop the search for
+                              `needle`. Default is False (a blank value will
+                              stop the search.
+    @return  Collection  a collection of row numbers in `haystack` that
+                         contains the matching value to `needle`. Returns an
+                         empty collection if no matches are found.
+
+
 ### Supporting functions
 
 #### ConvertCharColumnToNumber
