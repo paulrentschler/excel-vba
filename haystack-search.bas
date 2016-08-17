@@ -26,6 +26,7 @@ Public Function DetermineColumnNumber(ByVal column As Variant) As Long
         DetermineColumnNumber = column
     Else
         DetermineColumnNumber = ConvertCharColumnToNumber(column)
+    End If
 End Function
 
 
