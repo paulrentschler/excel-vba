@@ -60,7 +60,7 @@ Public Function FindMatchingRow(ByRef haystack As Worksheet, ByVal haystack_colu
                     blank_count = 0
                 End If
 
-                If Trim(.Cells(current_row, haystack_column)) = needle Then
+                If CStr(Trim(.Cells(current_row, haystack_column))) = CStr(needle) Then
                     FindMatchingRow = current_row
                     Exit Do
                 End If
