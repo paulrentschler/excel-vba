@@ -13,7 +13,7 @@ within Excel.
 **TODO:** include step-by-step instructions here
 
 
-## Module: haystack-searching.bas
+## Module: haystack-search.bas
 
 Provides functionality for searching a spreadsheet to find matching values.
 
