@@ -50,6 +50,8 @@ Public Function FindMatchingRow(ByRef haystack As Worksheet, ByVal haystack_colu
     Dim current_row As Long
     Dim blank_count As Integer
 
+    FindMatchingRow = 0
+
     haystack_column = DetermineColumnNumber(haystack_column)
     With haystack
         blank_count = 0
@@ -76,6 +78,4 @@ Public Function FindMatchingRow(ByRef haystack As Worksheet, ByVal haystack_colu
             DoEvents
         Loop
     End With
-
-    FindMatchingRow = 0
 End Function
