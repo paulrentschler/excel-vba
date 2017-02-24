@@ -1,5 +1,10 @@
-Attribute VB_Name = "parHaystackSearch"
+Attribute VB_Name = "HaystackSearch"
 Option Explicit
+
+'
+' Provides functionality for searching a spreadsheet to find matching values
+'
+
 
 'How many blank values in a row causes the search to stop (must be greater than zero)
 Const CONCURRENT_BLANK_VALUES = 100
@@ -133,4 +138,3 @@ Public Function FindMatchingRows(ByRef haystack As Worksheet, ByVal haystack_col
     
     Set FindMatchingRows = rows
 End Function
-
