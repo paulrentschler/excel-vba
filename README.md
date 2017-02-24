@@ -15,7 +15,7 @@ within Excel.
 
 ## Module: haystack-search.bas
 
-Provides functionality for searching a spreadsheet to find matching values.
+Provides functionality for searching a spreadsheet to find matching values
 
 
 ### Main functions
@@ -73,3 +73,22 @@ Returns the column number referenced by `column`
 
     @param   column  a letter or number representation of a column
     @return  Long  the numeric representation for `Column`
+
+
+
+
+## Module: special-sauce.bas
+
+Provides basic functionality that really should be part of VBA but isn't :(
+
+
+### Main functions
+
+#### Implode
+
+Returns a string containing all the values in `entries` separated by `delimiter`.
+
+    @param   entries    a Collection of values that will be combined into a
+                        single string
+    @param   delimiter  a string indicating what character(s) should be used
+                        to separate the values in `entries`
