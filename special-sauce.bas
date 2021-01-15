@@ -36,3 +36,19 @@ Public Function Implode(ByVal entries As Collection, Optional ByVal delimiter As
         Implode = ""
     End If
 End Function
+
+Sub ToggleR1C1()
+'
+' ToggleR1C1 Macro
+' Toggle between R1C1 and A1 notation
+'
+' Keyboard Shortcut: Ctrl+Shift+R
+'
+' Courtesy of: https://gist.github.com/jakelosh/5851415
+'
+    If Application.ReferenceStyle = xlR1C1 Then
+        Application.ReferenceStyle = xlA1
+    Else
+        Application.ReferenceStyle = xlR1C1
+    End If
+End Sub
